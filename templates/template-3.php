@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,12 +21,12 @@
     </div>
   </div>
 </div>
-
+<p><?php print_r($data); ?></p>
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
   <img class="w3-image" src="https://www.w3schools.com/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
   <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey"><?php echo $data['title']; ?></span></h1>
   </div>
 </header>
 
@@ -105,7 +106,8 @@
       <img src="https://www.w3schools.com/w3images/team2.jpg" alt="John" style="width:100%">
 
       <h3>John Doe</h3>
-      <p class="w3-opacity">CEO & Founder</p>
+   
+      <p class="w3-opacity">{{title}}</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
       <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
     </div>

@@ -1,36 +1,17 @@
 <?php 
+
 class Template
 {
-    private $obj = array(); 
-   var $tmpl;
 
-function assign($key, $value){
-       $this->obj[$key] = $value;
-   }
-
-   function show(){
-      if(count($this->obj)> 0)
-      {
-          foreach($this -> obj as $key => $value){  
-            $this->tmpl[$key] =  $value;
-        
-        }
-          
-      }
-     return $this->tmpl;
-     
-   }
-   function render($path = ''){
-   /* if($params){
-        extract($params);
-    }*/
-
+  function render($path = '' , $data){
+    extract($data);
+     ob_start(); 
+    
             if(!empty($path)){
                 if(file_exists($path)){
-                 
-                    $this->tmpl = include $path ;
-                    
-                
+
+                include($path) ;
+            
                 }
 
                 else
@@ -38,9 +19,13 @@ function assign($key, $value){
                         echo 'Error';
                  }
 
-            }
-           
+             }
+        $output = ob_get_contents();
+        ob_end_clean();
+         
+         return $output;
+        
         }
-   
+       
 }
 ?>

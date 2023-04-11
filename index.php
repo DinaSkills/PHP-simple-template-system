@@ -2,7 +2,10 @@
 require_once("template.php");
 define("TEMPLATES_PATH", "templates");
 
- $t = new Template();
- $t->assign('test', 'dina');
- $params = $t->show();
- $t->render(TEMPLATES_PATH . '/template-3.html');
+ $main = new Template();
+ $data = array(
+	'title' => 'This is tekst from data',
+	'heading' => 'Welcome to my page!',
+	'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+);
+ echo $main->render('templates/template-2.php', $data);
